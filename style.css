@@ -17,6 +17,7 @@
 body {
 	margin: 0;
 	font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
 	color: var(--text);
 	background: linear-gradient(180deg, #f9f7f3 0%, #f0ece4 100%);
 	line-height: 1.6;
@@ -150,6 +151,36 @@ a,
 .nav-link,
 .navbar-brand {
 	color: var(--text);
+}
+
+a {
+	text-underline-offset: 0.15em;
+	text-decoration-thickness: 0.08em;
+}
+
+a:hover,
+.nav-link:hover {
+	color: #0b3f4d;
+}
+
+.nav-link {
+	border-radius: 0.35rem;
+	padding: 0.3rem 0.55rem;
+}
+
+.nav-link.active,
+.nav-link:focus-visible,
+.navbar-brand:focus-visible,
+a:focus-visible {
+	background-color: #e7f0f3;
+	color: #0f1720;
+}
+
+.btn:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+	box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.35);
 }
 
 :focus-visible {
