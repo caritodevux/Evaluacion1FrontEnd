@@ -10,4 +10,4 @@ HTML, CSS, Bootstrap y GIT.
 
 ## Explicación breve del uso de la IA
 Se usara GitHub Copilot para revisar y mejorar la estructura base, estilos, correión de errores y accesibilidad.
-Se usara google gemini para generar texto en la sección <article>.
+Se usara google gemini para generar texto en la sección < article >.
