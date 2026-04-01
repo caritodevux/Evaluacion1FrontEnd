@@ -1,155 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Conexión a Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Estilos CSS propios -->
-    <link rel="stylesheet" href="style.css">
-    <title>Estudio Fotografico</title>
-</head>
-<body>
-    <!-- Script requerido para el javascript de bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <header>
-        <!-- Navbar de bootstrap -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#inicio">AF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#galeria">Galeria</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sobre-mi">Quien soy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#contacto">Contacto</a>
-                </li>
-            </ul>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estudio Fotografico</title>
+
+        <!-- Conexión a Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        >
+        <!-- Estilos CSS propios -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <!-- Navbar de bootstrap -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#inicio">AF</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#galeria">Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre-mi">Quien soy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="inicio">
+            <h2>Fotografia</h2>
+            <h1>Alejandra Fountain</h1>
+        </main>
+
+        <!-- Secciones principales con el portafolio fotográfico -->
+        <section id="galeria">
+            <h2>Galeria lugares</h2>
+            <div id="carouselLugares" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/mountainskies.jpg" class="d-block w-100" alt="montañas en blanco y negro">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ocean.jpg" class="d-block w-100" alt="oceano en blanco y negro">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/paris.jpg" class="d-block w-100" alt="la torre eifel en blanco y negro">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselLugares" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselLugares" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </section>
+
+        <section>
+            <h2>Galeria naturaleza</h2>
+            <div id="carouselNaturaleza" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/underwater.jpg" class="d-block w-100" alt="mujer girando bajo el agua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ocean.jpg" class="d-block w-100" alt="oceano en blanco y negro">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/rocks.jpg" class="d-block w-100" alt="rocas en blanco y negro">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselNaturaleza" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselNaturaleza" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </nav>
-    </header>
-    <main id="inicio">
-        <h2>Fotografia</h2>
-        <h1>Alejandra Fountain</h1>
-    </main>
-    <!-- Secciones principales con el portafolio fotográfico -->
-    <section id="galeria">
-        <h2>Galeria lugares</h2>
-        <div id="carouselLugares" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/mountainskies.jpg" class="d-block w-100" alt="montañas en blanco y negro">
+        </section>
+
+        <section>
+            <!-- Se uso copilot para corregir los nombres genericos de bootstrap -->
+            <h2>Galeria Matrimonio</h2>
+            <div id="carouselMatrimonio" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/wedding.jpg" class="d-block w-100" alt="mujer en vestido de novia">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/underwater.jpg" class="d-block w-100" alt="novia debajo del agua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/paris.jpg" class="d-block w-100" alt="la torre eifel en blanco y negro">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMatrimonio" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMatrimonio" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="carousel-item">
-            <img src="img/ocean.jpg" class="d-block w-100" alt="oceano en blanco y negro">
-            </div>
-            <div class="carousel-item">
-            <img src="img/paris.jpg" class="d-block w-100" alt="la torre eifel en blanco y negro">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLugares" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselLugares" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        </div>
-    </section>
-    <section>
-        <h2>Galeria naturaleza</h2>
-        <div id="carouselNaturaleza" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/underwater.jpg" class="d-block w-100" alt="mujer girando bajo el agua">
-            </div>
-            <div class="carousel-item">
-            <img src="img/ocean.jpg" class="d-block w-100" alt="oceano en blanco y negro">
-            </div>
-            <div class="carousel-item">
-            <img src="img/rocks.jpg" class="d-block w-100" alt="rocas en blanco y negro">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselNaturaleza" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselNaturaleza" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        </div>
-    </section>
-    <section>
-        <!-- Se uso copilot para corregir los nombres genericos de bootstrap -->
-        <h2>Galeria Matrimonio</h2>
-        <div id="carouselMatrimonio" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/wedding.jpg" class="d-block w-100" alt="mujer en vestido de novia">
-            </div>
-            <div class="carousel-item">
-            <img src="img/underwater.jpg" class="d-block w-100" alt="novia debajo del agua">
-            </div>
-            <div class="carousel-item">
-            <img src="img/paris.jpg" class="d-block w-100" alt="la torre eifel en blanco y negro">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMatrimonio" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselMatrimonio" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        </div>
-    </section>
-    <!-- Se le pidio a copilot agregar mas espacio alrrededor en esta sección -->
-    <article id="sobre-mi" class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Captura la Magia de tu Historia con Alejandra Fountain</h2>
-            <p class="mb-3">
-                Cada momento tiene una luz, una emoción y una narrativa que merece ser contada. La artista y fotógrafa Alejandra Fountain transforma instantes efímeros en recuerdos inmortales a través de su lente. Con un enfoque que combina una técnica impecable y una profunda sensibilidad estética, Alejandra no solo documenta la realidad, sino que eleva tu historia a su máxima expresión visual. Ya sea que busques un retrato íntimo, la cobertura de un día inolvidable o una sesión creativa, cada fotografía es tratada como una pieza de arte única.
-            </p>
-            <div class="mb-4">
-                <h3 class="mb-3">Servicios Destacados</h3>
+        </section>
+
+        <!-- Se le pidio a copilot agregar mas espacio alrrededor en esta sección -->
+        <article id="sobre-mi" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Captura la Magia de tu Historia con Alejandra Fountain</h2>
                 <p class="mb-3">
-                    Alejandra Fountain ofrece una variedad de servicios fotográficos adaptados a tus necesidades, siempre manteniendo su característico sello artístico:
+                    Cada momento tiene una luz, una emoción y una narrativa que merece ser contada. La artista y fotógrafa
+                    Alejandra Fountain transforma instantes efímeros en recuerdos inmortales a través de su lente. Con un
+                    enfoque que combina una técnica impecable y una profunda sensibilidad estética, Alejandra no solo
+                    documenta la realidad, sino que eleva tu historia a su máxima expresión visual. Ya sea que busques un
+                    retrato íntimo, la cobertura de un día inolvidable o una sesión creativa, cada fotografía es tratada
+                    como una pieza de arte única.
                 </p>
-                <ul class="list-unstyled ms-3">
-                    <li class="mb-2">
-                        <strong>Retratos de Autor:</strong> Sesiones individuales o familiares diseñadas para capturar la esencia y la personalidad auténtica de cada sujeto, jugando con la luz, el entorno y la naturalidad.
-                    </li>
-                    <li class="mb-2">
-                        <strong>Bodas y Eventos Íntimos:</strong> Cobertura documental y artística de tus momentos más importantes. Disfruta de tu día mientras Alejandra captura las sonrisas, las lágrimas y la alegría pura de forma espontánea y elegante.
-                    </li>
-                    <li class="mb-2">
-                        <strong>Fotografía Editorial y de Moda:</strong> Creación de imágenes impactantes para marcas, diseñadores, o portfolios personales. Una fusión perfecta entre el concepto, el estilo y la dirección de arte.
-                    </li>
-                </ul>
+                <div class="mb-4">
+                    <h3 class="mb-3">Servicios Destacados</h3>
+                    <p class="mb-3">
+                        Alejandra Fountain ofrece una variedad de servicios fotográficos adaptados a tus necesidades,
+                        siempre manteniendo su característico sello artístico:
+                    </p>
+                    <ul class="list-unstyled ms-3">
+                        <li class="mb-2">
+                            <strong>Retratos de Autor:</strong> Sesiones individuales o familiares diseñadas para capturar
+                            la esencia y la personalidad auténtica de cada sujeto, jugando con la luz, el entorno y la
+                            naturalidad.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Bodas y Eventos Íntimos:</strong> Cobertura documental y artística de tus momentos más
+                            importantes. Disfruta de tu día mientras Alejandra captura las sonrisas, las lágrimas y la
+                            alegría pura de forma espontánea y elegante.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Fotografía Editorial y de Moda:</strong> Creación de imágenes impactantes para marcas,
+                            diseñadores, o portfolios personales. Una fusión perfecta entre el concepto, el estilo y la
+                            dirección de arte.
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-primary">Trabajemos juntos</button>
             </div>
-            <button type="button" class="btn btn-primary">Trabajemos juntos</button>
-        </div>
-    </article>
-    <div id="contacto" class="container contact-wrap">
-        <div>
-            <h2>Contacto</h2>
-            <p>Cuéntame brevemente tu necesidad y te respondere dentro de 24 horas hábiles.</p>
-        </div>
-            <form class="contact-form" action="#" method="post"> <!-- Sección que contiene el formulario simple para que los usuarios se contacten -->
+        </article>
+
+        <section id="contacto" class="container contact-wrap">
+            <div>
+                <h2>Contacto</h2>
+                <p>Cuéntame brevemente tu necesidad y te responderé dentro de 24 horas hábiles.</p>
+            </div>
+            <!-- Sección que contiene el formulario simple para que los usuarios se contacten -->
+            <form class="contact-form" action="#" method="post">
                 <label for="nombre">Nombre</label>
                 <input id="nombre" name="nombre" type="text" autocomplete="name" required>
 
@@ -161,13 +192,21 @@
 
                 <button type="submit">Enviar mensaje</button>
             </form>
-        </div>
+        </section>
 
-    <footer class="site-footer"> <!-- Pie de página con información básica de contacto, autor y año -->
-        <div class="container footer-content">
-            <p>© 2026</p>
-            <p>Desarrollado por Carolina Rehbein</p>
-        </div>
-    </footer>
-</body>
+        <!-- Pie de página con información básica de contacto, autor y año -->
+        <footer class="site-footer">
+            <div class="container footer-content">
+                <p>© 2026</p>
+                <p>Desarrollado por Carolina Rehbein</p>
+            </div>
+        </footer>
+
+        <!-- Script requerido para el javascript de bootstrap -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
