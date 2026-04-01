@@ -1,18 +1,27 @@
 /* Variables de color y base visual */
 :root {
-	--bg: #f6f4ef;
-	--surface: #ffffff;
-	--text: #1f2933;
-	--heading: #0f1720;
-	--muted: #4b5563;
-	--accent: #0f4c5c;
-	--accent-hover: #0c3f4c;
-	--focus: #ff7a00;
-	--border: #d5dce3;
+	--bg: #f3eee6;
+	--bg-alt: #ebe4d8;
+	--surface: rgba(255, 255, 255, 0.84);
+	--surface-strong: #ffffff;
+	--text: #202833;
+	--heading: #111827;
+	--muted: #5b6472;
+	--accent: #164b5a;
+	--accent-hover: #103b46;
+	--accent-soft: #dce9ec;
+	--focus: #d97706;
+	--border: #d8d0c4;
+	--shadow-lg: 0 24px 60px rgba(20, 29, 40, 0.12);
+	--shadow-md: 0 12px 30px rgba(20, 29, 40, 0.1);
 }
 
 * {
 	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 /* Tipografía y fondo general */
@@ -21,8 +30,40 @@ body {
 	font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 	font-size: 1rem;
 	color: var(--text);
-	background: linear-gradient(180deg, #f9f7f3 0%, #f0ece4 100%);
+	background:
+		radial-gradient(circle at top left, rgba(22, 75, 90, 0.1), transparent 30%),
+		radial-gradient(circle at top right, rgba(217, 119, 6, 0.08), transparent 24%),
+		linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
 	line-height: 1.6;
+	position: relative;
+	overflow-x: hidden;
+}
+
+body::before,
+body::after {
+	content: "";
+	position: fixed;
+	z-index: -1;
+	border-radius: 999px;
+	filter: blur(8px);
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+body::before {
+	top: 7rem;
+	right: -6rem;
+	width: 16rem;
+	height: 16rem;
+	background: rgba(22, 75, 90, 0.08);
+}
+
+body::after {
+	left: -5rem;
+	bottom: 10rem;
+	width: 14rem;
+	height: 14rem;
+	background: rgba(217, 119, 6, 0.08);
 }
 
 h1,
@@ -32,6 +73,15 @@ h3 {
 	color: var(--heading);
 	font-family: "Georgia", "Times New Roman", serif;
 	line-height: 1.2;
+}
+
+h2 {
+	font-size: clamp(1.5rem, 2.2vw, 2rem);
+}
+
+h1 {
+	font-size: clamp(2.2rem, 5vw, 4rem);
+	letter-spacing: -0.04em;
 }
 
 p,
@@ -44,6 +94,64 @@ textarea {
 	font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Encabezado y navegación */
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	padding: 0.75rem 1rem 0;
+}
+
+header .navbar {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0.8rem 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.55);
+	border-radius: 1.1rem;
+	background: rgba(255, 255, 255, 0.72) !important;
+	backdrop-filter: blur(16px);
+	box-shadow: var(--shadow-md);
+}
+
+.navbar-brand {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem;
+	height: 2.75rem;
+	padding: 0 0.85rem;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--accent), #2d6877);
+	color: #ffffff !important;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	box-shadow: 0 10px 22px rgba(22, 75, 90, 0.22);
+}
+
+.navbar-toggler {
+	border-color: rgba(22, 75, 90, 0.18);
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-nav {
+	gap: 0.5rem;
+}
+
+.nav-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	padding: 0.45rem 0.9rem;
+	font-weight: 600;
+	color: var(--muted);
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+	transform: translateY(-1px);
+}
+
 /* Espaciado base para las secciones principales */
 main,
 section,
@@ -51,38 +159,67 @@ article,
 .contact-wrap,
 .site-footer {
 	padding-inline: 1rem;
+	max-width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 main {
-	padding-top: 1.5rem;
-	padding-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1.25rem;
+	padding: 2.2rem 1.25rem;
 	text-align: center;
+	background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+	border: 1px solid rgba(255, 255, 255, 0.75);
+	border-radius: 1.6rem;
+	box-shadow: var(--shadow-lg);
+}
+
+main h2 {
+	color: var(--accent);
+	text-transform: uppercase;
+	letter-spacing: 0.24em;
+	font-size: 0.9rem;
+	margin-bottom: 0.9rem;
+}
+
+main h1 {
+	max-width: 12ch;
+	margin-inline: auto;
 }
 
 /* Bloques de contenido y galerías */
 section {
-	margin-top: 1.25rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	background-color: rgba(255, 255, 255, 0.72);
-	border-top: 1px solid var(--border);
-	border-bottom: 1px solid var(--border);
+	margin-top: 1rem;
+	padding: 1.1rem;
+	background: var(--surface);
+	border: 1px solid rgba(216, 208, 196, 0.8);
+	border-radius: 1.4rem;
+	box-shadow: var(--shadow-md);
 }
 
 .carousel {
-	margin-top: 0.75rem;
-	border-radius: 0.75rem;
+	margin-top: 0.9rem;
+	border-radius: 1rem;
 	overflow: hidden;
 	background-color: var(--surface);
-	box-shadow: 0 8px 24px rgba(15, 23, 32, 0.08);
+	box-shadow: 0 10px 28px rgba(15, 23, 32, 0.12);
+}
+
+.carousel-inner {
+	aspect-ratio: 4 / 3;
+	background: #f4efe7;
+}
+
+.carousel-item {
+	height: 100%;
 }
 
 /* Imágenes responsivas dentro del carrusel */
 .carousel-inner img {
 	display: block;
 	width: 100%;
-	height: auto;
-	min-height: 240px;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -93,10 +230,12 @@ section + section {
 
 /* Texto y lista del bloque informativo */
 article {
-	margin-top: 1.75rem;
-	padding-top: 1.25rem;
-	padding-bottom: 1.25rem;
-	background-color: var(--surface);
+	margin-top: 1.25rem;
+	padding: 1.35rem;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 247, 242, 0.92));
+	border: 1px solid rgba(216, 208, 196, 0.85);
+	border-radius: 1.4rem;
+	box-shadow: var(--shadow-md);
 }
 
 article p,
@@ -113,23 +252,33 @@ article ul {
 .btn,
 button[type="submit"] {
 	border: 0;
-	border-radius: 0.5rem;
-	padding: 0.7rem 1rem;
-	background-color: var(--accent);
+	border-radius: 999px;
+	padding: 0.8rem 1.2rem;
+	background: linear-gradient(135deg, var(--accent), #245f70);
 	color: #ffffff;
 	font-weight: 600;
+	letter-spacing: 0.02em;
 	cursor: pointer;
+	box-shadow: 0 12px 24px rgba(22, 75, 90, 0.22);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn:hover,
 button[type="submit"]:hover {
-	background-color: var(--accent-hover);
+	background: linear-gradient(135deg, var(--accent-hover), #1b4a56);
+	transform: translateY(-1px);
+	box-shadow: 0 16px 30px rgba(22, 75, 90, 0.26);
 }
 
 /* Formulario de contacto */
 .contact-wrap {
-	margin-top: 1.5rem;
+	margin-top: 1.25rem;
 	margin-bottom: 1.5rem;
+	padding: 1.4rem;
+	background: rgba(255, 255, 255, 0.82);
+	border: 1px solid rgba(216, 208, 196, 0.85);
+	border-radius: 1.4rem;
+	box-shadow: var(--shadow-md);
 }
 
 .contact-form {
@@ -142,19 +291,22 @@ button[type="submit"]:hover {
 input,
 textarea {
 	width: 100%;
-	padding: 0.65rem;
-	border: 1px solid #a8b3bf;
-	border-radius: 0.45rem;
+	padding: 0.8rem 0.9rem;
+	border: 1px solid #c4cbd4;
+	border-radius: 0.8rem;
 	color: var(--text);
-	background-color: #ffffff;
+	background-color: var(--surface-strong);
+	box-shadow: inset 0 1px 2px rgba(15, 23, 32, 0.04);
 }
 
 /* Pie de página y navegación */
 .site-footer {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	background-color: #e6e1d7;
-	color: #1f2933;
+	background: linear-gradient(180deg, rgba(22, 75, 90, 0.95), #123743);
+	color: #f7fafc;
+	border-radius: 1rem 1rem 0 0;
+	box-shadow: var(--shadow-lg);
 }
 
 a,
@@ -184,7 +336,7 @@ a:hover,
 .nav-link:focus-visible,
 .navbar-brand:focus-visible,
 a:focus-visible {
-	background-color: #e7f0f3;
+	background-color: var(--accent-soft);
 	color: #0f1720;
 }
 
@@ -205,6 +357,15 @@ textarea:focus-visible {
 	outline-offset: 2px;
 }
 
+/* Variación visual por secciones */
+section:nth-of-type(odd) {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+section:nth-of-type(even) {
+	background: rgba(248, 244, 238, 0.96);
+}
+
 /* Ajustes para pantallas medianas y mayores */
 @media (min-width: 768px) {
 	main,
@@ -215,23 +376,34 @@ textarea:focus-visible {
 		padding-inline: 2rem;
 	}
 
+	header {
+		padding-inline: 1.5rem;
+	}
+
+	header .navbar {
+		padding-inline: 1.25rem;
+	}
+
 	main {
-		padding-top: 2.25rem;
-		padding-bottom: 1.25rem;
+		margin-top: 1.35rem;
+		padding: 3rem 2.5rem;
 	}
 
 	section {
-		margin-top: 1.5rem;
-		padding-top: 1.25rem;
-		padding-bottom: 1.25rem;
+		margin-top: 1.25rem;
+		padding: 1.5rem;
 	}
 
 	section + section {
-		margin-top: 2rem;
+		margin-top: 1.5rem;
 	}
 
 	.carousel-inner img {
-		min-height: 360px;
+		min-height: 0;
+	}
+
+	.carousel-inner {
+		aspect-ratio: 16 / 9;
 	}
 
 	.contact-wrap {
@@ -239,5 +411,10 @@ textarea:focus-visible {
 		grid-template-columns: 1fr 1fr;
 		gap: 1.5rem;
 		align-items: start;
+		padding: 1.8rem;
+	}
+
+	article {
+		padding: 1.8rem;
 	}
 }
